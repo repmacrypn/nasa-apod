@@ -2,16 +2,15 @@ import { Button } from '@/components/Button'
 import { Input } from '@/components/Input'
 import { useSearchControl } from '@/hooks/useSearchControl'
 
-import { ISelectorBlock } from './interface'
+import { ISearchBlock } from './interface'
 import { Container } from './styled'
 
-export const SelectorBlock = ({ onButtonClick }: ISelectorBlock) => {
+export const SearchBlock = ({ onButtonClick }: ISearchBlock) => {
   const { dateValue, handleInputChange } = useSearchControl()
 
   return (
     <Container>
-      <Input value={dateValue.dateStart} onChange={handleInputChange} name='dateStart' />
-      <Input value={dateValue.dateEnd} onChange={handleInputChange} name='dateEnd' />
+      <Input name='date' value={dateValue.date} onChange={handleInputChange} />
       <Button dateValue={dateValue} onClick={onButtonClick} />
     </Container>
   )
